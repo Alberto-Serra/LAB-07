@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pt.up.fe.ldts.example3.SimpleOrderSpockTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-11T00:04:01" hostname="ASUS-TUF-GAMING-FX504GD-FX80GD" time="0.168">
+  <properties/>
+  <testcase name="Fixed Discount" classname="pt.up.fe.ldts.example3.SimpleOrderSpockTest" time="0.167"/>
+  <testcase name="Percentage Discount" classname="pt.up.fe.ldts.example3.SimpleOrderSpockTest" time="0.0"/>
+  <testcase name="No Discount" classname="pt.up.fe.ldts.example3.SimpleOrderSpockTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
