@@ -2,7 +2,7 @@ package pt.up.fe.ldts.example4;
 
 import java.util.Objects;
 
-public class Worker {
+public class Worker implements WorkerInterface {
     private final String name;
     private final String phone;
     private final String username;
@@ -15,14 +15,17 @@ public class Worker {
         this.password = password;
     }
 
+    @Override
     public boolean login(String username, String password) {
         return this.username.equals(username) && this.password.equals(password);
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public String getPhone() {
         return phone;
     }

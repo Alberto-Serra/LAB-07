@@ -1,13 +1,23 @@
 package pt.up.fe.ldts.example4;
 
-public class Client extends Worker {
+public class Client implements ClientInterface {
+
+    private String name;
+    private String phone;
 
     public Client(String name, String phone) {
-        super(name, phone, null, null);
+        this.name = name;
+        this.phone = phone;
+    }
+
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
-    public boolean login(String username, String password) {
-        return false;
+    public String getPhone() {
+        return phone;
     }
 }
