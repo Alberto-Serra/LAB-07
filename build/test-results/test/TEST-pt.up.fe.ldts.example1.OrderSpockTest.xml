@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="pt.up.fe.ldts.example1.OrderSpockTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-14T22:21:51" hostname="ASUS-TUF-GAMING-FX504GD-FX80GD" time="0.031">
+<testsuite name="pt.up.fe.ldts.example1.OrderSpockTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-20T14:48:57" hostname="ASUS-TUF-GAMING-FX504GD-FX80GD" time="0.026">
   <properties/>
-  <testcase name="Is Elegible For Free Delivery (Small)" classname="pt.up.fe.ldts.example1.OrderSpockTest" time="0.005"/>
+  <testcase name="Is Elegible For Free Delivery (Small)" classname="pt.up.fe.ldts.example1.OrderSpockTest" time="0.003"/>
   <testcase name="Is Elegible For Free Delivery (Large)" classname="pt.up.fe.ldts.example1.OrderSpockTest" time="0.0"/>
-  <testcase name="Print Order" classname="pt.up.fe.ldts.example1.OrderSpockTest" time="0.025"/>
+  <testcase name="Print Order" classname="pt.up.fe.ldts.example1.OrderSpockTest" time="0.023"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

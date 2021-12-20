@@ -24,21 +24,34 @@ public class Turtle {
     }
 
     public void execute(char command) {
-        if (command == 'L') { // ROTATE LEFT
-            if (direction == 'N') direction = 'W';
-            else if (direction == 'W') direction = 'S';
-            else if (direction == 'S') direction = 'E';
-            else if (direction == 'E') direction = 'N';
-        } else if (command == 'R') { // ROTATE RIGHT
-            if (direction == 'N') direction = 'E';
-            else if (direction == 'E') direction = 'S';
-            else if (direction == 'S') direction = 'W';
-            else if (direction == 'W') direction = 'N';
-        } else if (command == 'F'){ // MOVE FORWARD
-            if (direction == 'N') row--;
-            if (direction == 'S') row++;
-            if (direction == 'W') column--;
-            if (direction == 'E') column++;
-        }
+        setMovement(command);
+    }
+
+    public void setMovement(char rotation) {
+        if (rotation == 'F')
+            moveForward();
+        else
+            switch (direction) {
+                case 'N':
+                    this.direction = rotation == 'L' ? 'W' : 'E';
+                    break;
+                case 'W':
+                    this.direction = rotation == 'L' ? 'S' : 'N';
+                    break;
+                case 'S':
+                    this.direction = rotation == 'L' ? 'E' : 'W';
+                    break;
+                case 'E':
+                    this.direction = rotation == 'L' ? 'N' : 'S';
+                    break;
+            }
+    }
+
+    public void moveForward() {
+        if (direction == 'N') row--;
+        else if (direction == 'S') row++;
+        else if (direction == 'W') column--;
+        else column++;
     }
 }
+

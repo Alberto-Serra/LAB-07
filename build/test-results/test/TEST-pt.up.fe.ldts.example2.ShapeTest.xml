@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="pt.up.fe.ldts.example2.ShapeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-12-14T22:21:52" hostname="ASUS-TUF-GAMING-FX504GD-FX80GD" time="0.302">
+<testsuite name="pt.up.fe.ldts.example2.ShapeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-12-20T14:48:57" hostname="ASUS-TUF-GAMING-FX504GD-FX80GD" time="0.275">
   <properties/>
-  <testcase name="getAreaRectangle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.01"/>
+  <testcase name="getAreaRectangle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.009"/>
   <testcase name="getPerimeterCircle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.0"/>
-  <testcase name="drawCircle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.286"/>
-  <testcase name="getAreaCircle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.001"/>
+  <testcase name="drawCircle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.26"/>
+  <testcase name="getAreaCircle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.0"/>
   <testcase name="getPerimeterRectangle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.001"/>
   <testcase name="drawRectangle()" classname="pt.up.fe.ldts.example2.ShapeTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>

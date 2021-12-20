@@ -4,92 +4,94 @@ import spock.lang.Specification
 import java.text.SimpleDateFormat
 
 class TreeSpockTest extends Specification {
-    def tree
-    def date
+    Tree tree
+    Date date
 
     def setup() {
         def sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss")
         date = sdf.parse("31-08-2002 10:20:56")
-        tree = new Tree(date, "41.177772696363114", "-8.59843522310257", "FEUP")
+        tree = new Tree(date)
+        tree.setLocation("41.177772696363114", "-8.59843522310257", "FEUP")
+
     }
 
     def 'Tree Creation'() {
         expect:
-            tree.plantedAt == date
-            tree.locationLatitude == "41.177772696363114"
-            tree.locationLongitude == "-8.59843522310257"
-            tree.locationName == "FEUP"
+        tree.getPlantedAt() == date
+        tree.getLocation().getLocationLatitude() == "41.177772696363114"
+        tree.getLocation().getLocationLongitude() == "-8.59843522310257"
+        tree.getLocation().getLocationName() == "FEUP"
     }
 
     def 'Tree Set Location'() {
         given:
-            tree.setLocation("loclat", "loclon", "locname")
+        tree.setLocation("loclat", "loclon", "locname")
 
         expect:
-            tree.plantedAt == date
-            tree.locationLatitude == "loclat"
-            tree.locationLongitude == "loclon"
-            tree.locationName == "locname"
+        tree.getPlantedAt() == date
+        tree.getLocation().getLocationLatitude() == "loclat"
+        tree.getLocation().getLocationLongitude() == "loclon"
+        tree.getLocation().getLocationName() == "locname"
     }
 
     def 'Tree to String'() {
         when:
-            def result = tree.toString()
+        def result = tree.toString()
 
         then:
-            result == "Tree planted at Sat Aug 31 10:20:56 WEST 2002 in location 41.177772696363114,-8.59843522310257 (FEUP)"
+        result == "Tree planted at Sat Aug 31 10:20:56 WEST 2002 in location 41.177772696363114,-8.59843522310257 (FEUP)"
     }
 
     def 'Add Appraisal'() {
         when:
-            def sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss")
-            def appraisalDate = sdf.parse("31-08-2002 10:20:56")
+        def sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss")
+        def appraisalDate = sdf.parse("31-08-2002 10:20:56")
 
         then:
-            tree.getAppraisals().size() == 0
+        tree.getAppraisals().size() == 0
 
         and:
-            tree.addAppraisal(appraisalDate)
+        tree.addAppraisal(appraisalDate)
 
         then:
-            tree.getAppraisals().size() == 1
+        tree.getAppraisals().size() == 1
     }
 
     def 'Next Appraisal Overdue'() {
         given:
-            def calendar = Calendar.getInstance()
-            calendar.setTime(new Date())
-            calendar.add(Calendar.MONTH, -6)
+        def calendar = Calendar.getInstance()
+        calendar.setTime(new Date())
+        calendar.add(Calendar.MONTH, -6)
 
         when:
-            def appraisalDate = calendar.getTime()
+        def appraisalDate = calendar.getTime()
 
         then:
-            !tree.isNextAppraisalOverdue()
+        !tree.isNextAppraisalOverdue()
 
         and:
-            tree.addAppraisal(appraisalDate)
+        tree.addAppraisal(appraisalDate)
 
         then:
-            tree.isNextAppraisalOverdue()
+        tree.isNextAppraisalOverdue()
     }
 
     def 'Next Appraisal Not Overdue'() {
         given:
-            def calendar = Calendar.getInstance()
-            calendar.setTime(new Date());
-            calendar.add(Calendar.MONTH, -1);
+        def calendar = Calendar.getInstance()
+        calendar.setTime(new Date());
+        calendar.add(Calendar.MONTH, -1);
 
         when:
-            def appraisalDate = calendar.getTime()
+        def appraisalDate = calendar.getTime()
 
         then:
-            !tree.isNextAppraisalOverdue()
+        !tree.isNextAppraisalOverdue()
 
         and:
-            tree.addAppraisal(appraisalDate)
+        tree.addAppraisal(appraisalDate)
 
         then:
-            !tree.isNextAppraisalOverdue()
+        !tree.isNextAppraisalOverdue()
     }
 }
